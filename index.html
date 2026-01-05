@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.5D迷宫游戏</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="game-container">
+        <div id="game-ui">
+            <div id="level-info">关卡: <span id="current-level">1</span></div>
+            <div id="timer">时间: <span id="time-counter">0</span>秒</div>
+            <div id="start-screen" class="screen">
+                <h1>2.5D迷宫游戏</h1>
+                <button id="start-button">开始游戏</button>
+                <div class="instructions">
+                    <h2>游戏说明</h2>
+                    <p>使用方向键或WASD键移动角色，找到出口通关。</p>
+                    <p>每过一关，迷宫难度会增加。</p>
+                </div>
+            </div>
+            <div id="level-complete" class="screen">
+                <h2>关卡完成!</h2>
+                <p>用时: <span id="level-time"></span>秒</p>
+                <button id="next-level">下一关</button>
+            </div>
+            <div id="game-over" class="screen">
+                <h2>游戏结束!</h2>
+                <p>你完成了 <span id="final-level"></span> 个关卡</p>
+                <button id="restart-button">重新开始</button>
+            </div>
+        </div>
+        <div id="game-canvas"></div>
+    </div>
+
+    <!-- 引入Three.js库 -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/controls/OrbitControls.js"></script>
+    
+    <!-- 游戏脚本 -->
+    <script src="js/maze.js"></script>
+    <script src="js/player.js"></script>
+    <script src="js/game.js"></script>
+</body>
+</html>
